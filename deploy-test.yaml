@@ -13,7 +13,7 @@ metadata:
   name: gpt-detector-classifier-test
   namespace: gpt-detector-test
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: gpt-detector-classifier-test
@@ -26,7 +26,7 @@ spec:
         usage: ai
       containers:
         - name: classifier
-          image: gptdetector.azurecr.io/gensy/classifier:05
+          image: gptdetector.azurecr.io/gensy/classifier:06
           resources:
             requests:
               cpu: 1000m
@@ -46,7 +46,7 @@ spec:
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 8080
+      port: 5000
       targetPort: 5000
   selector:
     app: gpt-detector-classifier-test
