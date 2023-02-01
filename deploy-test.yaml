@@ -26,14 +26,14 @@ spec:
         usage: ai
       containers:
         - name: classifier
-          image: gptdetector.azurecr.io/gensy/classifier:06
+          image: gptdetector.azurecr.io/gensy/classifier:08
           resources:
             requests:
-              cpu: 1000m
-              memory: 4Gi
+              cpu: 1700m
+              memory: 2Gi
             limits:
               cpu: 3000m
-              memory: 8Gi
+              memory: 4Gi
           ports:
             - containerPort: 5000
 ---
